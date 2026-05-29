@@ -12,9 +12,9 @@ services:
       - 8000
     volumes:
     volumes:
-      - "./config:/home/node/app/config"
-      - "./data:/home/node/app/data"
-      - "./plugins:/home/node/app/plugins"
+      - ./config:/home/node/app/config
+      - ./data:/home/node/app/data
+      - ./plugins:/home/node/app/plugins
     healthcheck:
       test: ["CMD", "node", "src/healthcheck.js"]
       interval: 30s
