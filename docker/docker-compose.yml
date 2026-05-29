@@ -11,10 +11,10 @@ services:
     ports:
       - 8000
     volumes:
-      - sillytavern-config:/home/node/app/config
-      - sillytavern-data:/home/node/app/data
-      - sillytavern-plugins:/home/node/app/plugins
-      - sillytavern-extensions:/home/node/app/public/scripts/extensions/third-party
+    volumes:
+        - "./config:/home/node/app/config"
+        - "./data:/home/node/app/data"
+        - "./plugins:/home/node/app/plugins"
     healthcheck:
       test: ["CMD", "node", "src/healthcheck.js"]
       interval: 30s
