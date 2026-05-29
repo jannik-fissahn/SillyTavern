@@ -59,7 +59,7 @@ ssl:
 # Toggle whitelist mode
 whitelistMode: false
 # When enabled, whitelist will also verify IP in headers enabled in `forwardedHeaders` section.
-enableForwardedWhitelist: true
+enableForwardedWhitelist: false
 # Whitelist of allowed IP addresses
 whitelist:
   - ::1
