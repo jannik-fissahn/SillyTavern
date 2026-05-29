@@ -9,12 +9,12 @@ services:
       - FORCE_COLOR=1
       - SILLYTAVERN_HEARTBEATINTERVAL=30
     ports:
-      - "8000:8000"
+      - 8000
     volumes:
-      - "./config:/home/node/app/config"
-      - "./data:/home/node/app/data"
-      - "./plugins:/home/node/app/plugins"
-      - "./extensions:/home/node/app/public/scripts/extensions/third-party"
+      - sillytavern-config:/home/node/app/config
+      - sillytavern-data:/home/node/app/data
+      - sillytavern-plugins:/home/node/app/plugins
+      - sillytavern-extensions:/home/node/app/public/scripts/extensions/third-party
     healthcheck:
       test: ["CMD", "node", "src/healthcheck.js"]
       interval: 30s
@@ -22,3 +22,9 @@ services:
       start_period: 20s
       retries: 3
     restart: unless-stopped
+
+volumes:
+  sillytavern-config:
+  sillytavern-data:
+  sillytavern-plugins:
+  sillytavern-extensions:
